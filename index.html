@@ -1,0 +1,300 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://kit.fontawesome.com/735ddb18d6.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=PT+Sans:ital,wght@0,700;1,400&family=Patrick+Hand&family=Roboto+Condensed&family=Roboto+Mono:ital,wght@0,500;1,400&family=Roboto:ital,wght@0,300;1,300&family=Rubik&family=Source+Serif+4:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+     <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-128/netflix-6-722723.png">
+     <title>movie search app</title>
+ </head>
+ <body>
+ <div class="load_img">
+       <!--background image is here-->
+ </div> 
+   
+ <div class="netflix_headimg">
+     <img class="netflix_firstTopimg"src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAn1BMVEUAAADlCRPhCxg6DQ7pCxjmCRJuDhSLEBfsCBQFAADgERxZCApBBQd6DxUAAALQDRcdBghEDA8tAwMkBQbKDBeMCxGuDBUnJycLAACGCg9pDRO3DBRCCQ4ABADtCRjgDhnGEhvdEyK0ERrPDhWWDRfaDRglBghRCwx/DBFKCQw3BwxADA+ZDxPJDRUeBgh6DhKkDhUqAwPCEx1xCg9/FBxfQICFAAAGxklEQVR4nO2dD1ebOhiHkzSxqVVQV3u51FF0drW1arX7/p/tJm/4D27oqo3n/p6zs5UQoHl4CW8gPWMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICX/HPoL9CfL/RVAQAAAAAAAAAAAAAAAAAAAAAAAADA1yZw/4wqBcGoVSnI69X53r3LIK/c2CjbC+3N/dVVx0NG7ls1GxYYba3vS20alVXLFR1Ns2VWd2DrN20W9UeVyu6wzmPnLg9OwAbCEuYF13ZJxqRrKEWd4zNTnjYKxVxszYYnjVIuhqbyL7sLPqmZD1hER5mPraxHMedzIW7cmoCFtOr6s0X0Y6AV5zyJaSFgx3ZJH1Hrhlopu5ijZGTKJ9UiW6qUbemJVLy2Rv5rSk+1/fijeVB7FKXH9PnGHENJ+cgowo4Suxt9+3kC+mMiS1KLp1nBgjtZdtVQ17VwI4uxh4YsU93JaijUpaywcczRnE7QmBbGWlg9l+6KnVhXiv/8VAu9yWSRB8NC/UlWM7LMxh2yzE4KWSpsHHN0XMgyhHZBLeiQS0mip8xPnCyu7txiT1k1YZ2R1V/WJR3GLJnAmtHO5Yq1bsVekMmSE7fYlqVMh+Jw4TdJ7MfMFpVWZRWVZdJX1oXbcGY/SpKV+pk6lJEl13T7bsnSP9bnGffnJnFgA/oYk0i5ohUDlsuSy/MC2+/0kcVeyJD4xtiG9qpjz2XZHrZTFp/Uquf511VC19pZsYJkqXmjZ+4ly4k3HUG0sPtsVfeHXFb2FVuy1ENeMwgqCemJzTiUeCzy2iyyLvIKI8rMe8migyoZsidbW+oh87TLKmSZK8gu/iayapfGCVkwsvIhkJMlLsoqtsF9ZAXZ1SfP7b1DcRF5OtypyNI2D//jZZiTyWpchpXIcvSTdS/t7VWFLovZ7qtp+6eQpRb2dB5ClhlCaeqsXIRf7a1te6eQZW9CB5Fl2CWFLD3z9Rpk1ciiTKfdwaedm3XKUpyGeBV6yqIC90d6mzewamRxe29rylIqXI3H4ziOj2pB80pk8ZupY+hKe8pi22JI4G/ewKqRxfVphyyutE5M0q51XN3slchSGXrmSvvKWklnS+k7jwOryOBNYOm0c2xoxza2/X+WVaLeKIulTpY+9jZtsJAsJeZ2tGeGPHPe7LPyQfObZMm3yQpcPmqqbvyXxeWGIuq2o4PPAq9fZOUD7DdGlsls3Wby+aPauRcyWffSteq6GVllN9RDluJJoom3XoZX2WO1RurhGe4ylN/t0F8lV60npUqEE0OaTqptezXP2lw6dq60d2RNsz7Ly+fJBVlkRdRpqG37sfLvklLZkvWtXq1vZD3mw/mF/32Wkt8iunnP+V/Kel8Gz251njr4nJPmkfWTzSiFVoeRtchuI8WdwU8G+eVjX0Jl975Pl7XT7izZbO/ZyxesjkJWJIos6XMH0iOTkrpbKaUtw/21be8UsthUH0SWybGW7mWuCy6fB4elrPGhZLEbOpCg92D19MszSlkue/+trLI32aesC5eQpmdS5W9YPe22KrK2HbIUPc+Kfq5X4/h0GBWbvUUWF+lsNt3e3u3i5dp6aHTwG3cLjtmMdjo/8/V9RVXWMumKLP4QhseChjHJO2W5IVM5DGp08PP8/X2caDtJ4u6j2/xuCllBNuugJUvJrP+V8r2yClSHrDv3ZtUqoo5ATdgrs+YOTlVWnkd3zHWgFRVZV1TVysqa5R7+icZTg9MkC6zXZNlTRCdiHtE7McoeVp66ql6GbCV5O4OvUM1Btc2LxFkxmfIkUSppPTU4rU/xUg1Z1sk4IUFbe8Qrd668fRlWjax8OlFLlqIm64qsq4QLIa7L9xPr9CVN05fq63uzx19S2Dki7rGNUlK3ZdHjDi7XpD11XXzE/CQfSNMU0EvN85l/QUAz/6iVUojjRThJp2UjoufHaNRxiw/qC9Hz+nw5jndPd5e32+nsYUFBMxLWnL0MA7amaE6qz7948vShTX4/xUDaQq+GjSEXWb/CdLq5fDoary7O9teJ2M47fhpuZ5MlPciikHNTJs0Jmmdzjvxk4N73Zc+hJokIJ7Ppyn6u+9mvrfxjwManxlv4kpds6aJMPH0rPZDmMtPJs5tTfXHvuiU7EauYZs1Yx6T4v8DNp8/nc2dl2b+rJJGJ8rKLt3PTrs21tluRjGL++Yfeucs59wHLZjHlP1Ewn59Xu8305br7hwgHxteHRx4OeF77gcmh8fMUjljHz0tANxAFAAAAAAAAAAAAAAAAAAAAAAAAgK/AF/r/hr/QVwUAAAAAAAAAAAAAAAAAAAAAAAAAAACA/xf/AZumcXFHS7f9AAAAAElFTkSuQmCC" alt="photo">
+  <p>Who's Watching ?</p>
+ </div>
+   
+   <div id="profile_icons">
+ 
+  <div>
+       <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6mnkESGGXpL32uVzQNDLcsAidQyxUkjADA&usqp=CAU" alt="photo">
+      <p>Dad</p>
+   </div>
+ 
+   <div>
+       <img class="profile" src="data:image/png;base64,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" alt="photo">
+     <p>Derrick</p>
+   </div>
+ 
+  <div>
+      <img class="profile"src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUNfoD///8Ae30AeHoAdXcAdnl6q6z2+/vo8vLx+Ph1sbIAdHfu9PQHfH8AgYPl8vI7kJKRvr+hx8jO4+PJ3d4eioxppqja6eni7OxdoqRSnqC42dqXxsaw09Ntra8ph4l/uLmGtrdapqeozc02lZdMmZuuzM3A2NnU4+SRvL2fy8xSmZpEkZO+1NV1qaqNxlfBAAAEIElEQVR4nO3bXXeiOhQGYNgJg6AiiIiggtbP0U7//8+beJzjoCYtSAQ7630uetVmvZuEEOnWMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvjNi3Ii8rkWtpuiLGCyKxA/dOchIZ3FPmGc5tVckGf4iPMUIA9/QGYNoEZr/c4Y+0zh2FSydX2KY00RfDDJ2ZlEnbadEa+EUYziBrlkkPzav2W4rJc5vYphzTQPTbYGixBZmkc/uYphDPTG29yObHb/p7YYSSQxzqSEGJbZs6FX9kavJQ1mMQV6/RDaVjWzaDU8i/ZDGMBf116knH1nH0FUoLrQ5qR2D3hQVhl0dwUvjihh2VHctsZVqaC3By6K1IoaZ1a2Qj5QXr68leznKpWQu6y5Tfv8wbKXC7HkV7hQjN1xh+rQKmeQkca6w0acFRaoKa9+HyosXci3Ry7Kk5w4de6lhKCps+nl4d+w+q/88VD0uHA3HpSpoLJ/ErH6FdHRkIw+b3GdOPOljK841DE2yvWaiYflXjLGWTKLtaolB9w8Me938uxq+uC8x0LMZUHRboqNh9T+QY3lb4ErXrUL92dXli6N23tPwt04xRsfV+MCi5O+Hl8Gy4W20EMMvXOrhRut1Jsrd+WQy2c82Wt9TVo7hpatY5FhlhvbXtsQsLmh/11w9x0vEAAAAAAAAAAAAAAAAgH8KMc/4l/8HRXyz3e2GLf07uqD/nO+fkLHZ2eeWgnZnkVi0ifSvJOLJpUXKTtoskfxdp9fZb7TWSETprtA50XCD3RWW/Qky19dUQCx3b7r2PV1jV+dd+sU6M88iDc0v1I2Cu5bextuzLqyrdrGgdhOHmL6xrGM/0hP3EfurIM42YY/fkMRYOpR2ZDvt3Yfe/iaLPVn4j7TBiL0l9xexooe24UbXIkvWL7n7uSGryh1JjEfjofQrQefV/7T8X2OuNFIvnq3FmisxlyR+zYoWo4Fi9oRB1kAhapbyytvT4OM9OpUpr1PUZhnR8SOYqosT4sxq99AmHvifxBuEo2G2iXiXc1bEeddYp8vtaN/55K9P9bntH0qJZV+kFHrh9HAI3P8sDodVqL7nCuzwrc0Wwr9YFEjbxGuy5+MWv1F+jcgPPr2XHtAL3l9j/v4Qny+CUguvHGfnvt7n3r44LSu+IFnVIDgarW8vUsSjmepQUnr24iB65dZZYt54NXi8vtEw9V64vDOx/fmHuPre6vSmWa6/r/s5xDls7W7D8lU64fZn6vFvUt4ZMcrfk2D69VnAmQbj95xefm3KiHMn73prN/g1CuO441zm1HacQRyHo19Btva6vMz5/JWd6jQ83z8mx48fZ8kx2fi5R9++tiKiPl1rOxEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALy43/ipMgzSotaqAAAAAElFTkSuQmCC" alt="photo">
+      <p>Kingdee.</p>
+  </div>
+      
+ 
+      <div>
+          <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAwkkr0huVShN3RgjUdJw6oWGRrYHUV4B_Sg&usqp=CAU" alt="photo">
+        <P>Mummy &#x1F60D</P>
+      </div>
+     
+ 
+      <div>
+          <img class="profilefive" src="data:image/jpeg;base64,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" alt="photo">
+        <p class="Mose">Joy</p>
+      </div>
+ 
+      <div>
+          
+      </div>
+   </div>
+ 
+    <!--display pic div-->
+    <main>
+    <div class="header_image">
+     <nav class="nav_icons">
+         <div>
+         <img class="tvimage"src="data:image/png;base64,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" alt="photo">
+         </div>
+        
+ <div class="profile_icon">
+ <div>
+ <img class="profile_image"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAwkkr0huVShN3RgjUdJw6oWGRrYHUV4B_Sg&usqp=CAU" alt="photo">
+ </div>
+ <div class="movie_input">
+   <svg id="search_icon"xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+     </svg>
+   </div>
+ </div>
+     </nav>
+ 
+     <div class="header_text">
+         <p>Tv Shows</p>
+         <p>Movies</p>
+         <p>Categories <svg class="carret"xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+           </svg></p>
+     </div>
+     <p id="header_imageText"></p>
+     </div>
+     <div class="header_imageicon">
+           <img class="cross"src="https://img.icons8.com/external-flaticons-flat-flat-icons/344/external-plus-100-most-used-icons-flaticons-flat-flat-icons-2.png" alt="photo">
+           
+           <a href="#closed" class="play_topicon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+           </svg><span class="play_text">Play</span>
+         </a>
+ 
+         <img class="info"src="https://img.icons8.com/color/2x/info--v3.gif" alt="alt">
+     </div>
+ 
+ <h3 class="movie_text">DRAMA</h3>
+  <div id="Drama">
+      <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/213/534017.jpg" alt="photo">
+       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/15.jpg" alt="alt">
+        <img class="drama" src="https://static.tvmaze.com/uploads/images/medium_portrait/230/575652.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/73.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/82/206879.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/69/174906.jpg" alt="photo">
+          <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/189/474715.jpg" alt="photo">
+          <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/137.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/383/957712.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/184.jpg" alt="photo">
+         </div>
+ 
+         <h3 class="movie_text">Thriller</h3>
+  <div id="Drama">
+      <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" alt="photo">
+       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/178/445621.jpg" alt="alt">
+        <img class="drama" src="https://static.tvmaze.com/uploads/images/medium_portrait/48/122260.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/70/175363.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/164/412464.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/348/870947.jpg" alt="photo">
+          <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/305.jpg" alt="photo">
+          <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/126/316697.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/216/540157.jpg" alt="photo">
+         <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/126/316698.jpg" alt="photo">
+         </div>
+         <h3 class="movie_text">Action & Adventure</h3>
+         <div id="Drama">
+             <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/396/990803.jpg" alt="photo">
+              <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/257/642675.jpg" alt="alt">
+               <img class="drama" src="https://static.tvmaze.com/uploads/images/medium_portrait/388/970315.jpg" alt="photo">
+                <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/213/532575.jpg" alt="photo">
+                <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/178/446780.jpg" alt="photo">
+                <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/286/715906.jpg" alt="photo">
+                 <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/253/634071.jpg" alt="photo">
+                 <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/170/426759.jpg" alt="photo">
+                <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/391/978079.jpg" alt="photo">
+                <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/128/322484.jpg" alt="photo">
+                </div>
+ 
+                <h3 class="movie_text">Horror and Supernatural</h3>
+                <div id="Drama">
+                    <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/1/3788.jpg" alt="photo">
+                     <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/1/3700.jpg" alt="alt">
+                      <img class="drama" src="https://static.tvmaze.com/uploads/images/medium_portrait/1/3632.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/1/3627.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/161/404453.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/1/3523.jpg" alt="photo">
+                        <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/1/2892.jpg" alt="photo">
+                        <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/177/444429.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/160/401855.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/73/184895.jpg" alt="photo">
+                       </div>
+        
+                       
+                <h3 class="movie_text">Anime and Comedy</h3>
+                <div id="Drama">
+                    <img class="drama"src="https://m.media-amazon.com/images/I/71fHNCzNwkL._AC_SL1000_.jpg" alt="photo">
+                     <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/178/446544.jpg" alt="photo">
+                      <img class="drama" src="https://static.tvmaze.com/uploads/images/medium_portrait/396/991619.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/38/95017.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/294/736804.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/441.jpg" alt="photo">
+                        <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/388/970329.jpg" alt="photo">
+                        <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/639.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/355/889304.jpg" alt="photo">
+                       <img class="drama"src="https://static.tvmaze.com/uploads/images/medium_portrait/0/678.jpg" alt="photo">
+                     </div>
+                     <h3 class="movie_text"><span class="Available">Home movies </span></h3>
+     <div id="contents">
+     
+     </div>
+ <footer>
+     <div class="General_footer">
+       <div class="home_box">
+       <div class="home_icon">
+       <img style="width:30px;"src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/2x/external-home-user-interface-kmg-design-outline-color-kmg-design.png" alt="photo">
+       </div>
+       <div>
+       <span>Home</span>
+       </div>
+     </div>
+     <div class="play_box">
+         <div class="play_icon">
+            <img style="width:30px;"src="https://img.icons8.com/color/344/google-play-movies-and-tv.png" alt="photo">
+         </div>
+         <div>
+         <span>Coming soon</span>
+         </div>
+         </div>
+     <div class="download_box">
+     <div class="download_icon">
+      <img style="width:30px;"src="https://img.icons8.com/color/2x/download-from-cloud.png" alt="photo">
+     </div>
+     <div>
+     <span>Download</span>
+     </div>
+     </div>
+     </div>
+ </footer>
+ </main>
+ <section>
+   <form action="" id="second_searchBox">
+    <img class="back_arrow" onclick="backArrow()"src="https://img.icons8.com/material-sharp/344/left.png" alt"back-arrow">
+     <input type="text" name="text" id="input_one" value="" placeholder="Search for a show or movie">   
+     <button id="second_search">  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+     </svg></button>
+   </form>
+ 
+ </section>
+ 
+ <span id="find_film">
+ 
+ </span>
+ <section class="topSearch">
+ <h1 style="text-align: center;">Top Searches</h1>
+   <div class="play_one">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/72/182140.jpg" alt="photo">
+      <h2 class="search_text">Ip Man</h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   <div class="play_two">
+     <img class="play_iconImage" src="https://static.tvmaze.com/uploads/images/medium_portrait/331/828863.jpg" alt="photo">
+      <h2 class="search_text">Assassin's <br>creed</h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   <div class="play_three">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/141/354131.jpg" alt="photo">
+     <h2 class="search_text" >Junji </h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   <div class="play_four">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/44/111282.jpg" alt="photo">
+      <h2 class="search_text" >Jumanji </h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   
+   <div class="play_five">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/276/692290.jpg" alt="photo">
+       <h2 class="search_text">Demon Lord </h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   <div class="play_six">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/104/261034.jpg" alt="photo">
+      <h2  class="search_text" >Prison Break</h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   <div class="play_seven">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/5/14755.jpg" alt="photo">
+      <h2 class="search_text">Ninja Tutles</h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ 
+   <div class="play_eight">
+     <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/328/820830.jpg" alt="photo">
+     <h2 class="search_text" >Resident Evil </h2>
+     <div>
+      <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+    </div>
+   </div>
+ </div>
+ 
+ <div class="play_nine">
+   <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/248/622000.jpg" alt="photo">
+   <h2 class="search_text" >Paradise Lost</h2>
+   <div>
+    <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+  </div>
+ </div>
+ 
+ <div class="play_ten">
+   <img class="play_iconImage"src="https://static.tvmaze.com/uploads/images/medium_portrait/35/87689.jpg" alt="photo">
+   <h2 class="search_text" >Peter Rabbit</h2>
+   <div>
+    <img class="play_iconBlue"src="https://img.icons8.com/external-bearicons-outline-color-bearicons/344/external-play-call-to-action-bearicons-outline-color-bearicons.png" alt="icon">
+  </div>
+ </div>
+ </section>
+ <script src="script.js"></script>
+ </body>
+ </html>
